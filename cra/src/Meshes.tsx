@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-//import {OrbitControls} from '@react-three/drei';
+
 function CoinMesh() {
   const mesh = useRef(null);
   useFrame(() => (mesh.current.rotation.y = mesh.current.rotation.z += 0.1));
