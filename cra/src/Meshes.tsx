@@ -1,10 +1,7 @@
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { lazy } from "react";
-import { Suspense } from "react";
-import Gltf from "./Gltf";
 
-const ModelComponent = lazy(() => import("./Gltf"));
+import Gltf from "./Gltf";
 
 function CoinMesh() {
   const mesh = useRef(null);
