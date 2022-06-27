@@ -34,8 +34,9 @@ export default function Main() {
       </Suspense>
       <input
         type="range"
+        defaultValue={0}
         onChange={(e) => setScale(Number(e.target.value) / 10)}
-      ></input>
+      />
     </>
   );
 }

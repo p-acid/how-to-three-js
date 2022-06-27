@@ -11,7 +11,10 @@ const Square = ({ scale }: { scale: number }) => {
 
   return (
     <mesh ref={mesh}>
+      <directionalLight color="blue" position={[5, 5, 5]} intensity={0.2} />
+      <ambientLight color="green" position={[5, 5, 5]} intensity={0.2} />
       <boxGeometry args={[scale, scale, scale]} />
+      <meshStandardMaterial />
     </mesh>
   );
 };
