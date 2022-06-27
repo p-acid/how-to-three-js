@@ -1,9 +1,9 @@
-import Meshes from "./Meshes";
+import Main from "./Main";
 
 export default function App() {
   return (
     <div className="App">
-      <Meshes />
+      <Main />
     </div>
   );
 }
