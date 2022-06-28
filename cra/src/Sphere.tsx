@@ -11,10 +11,7 @@ const Sphere = ({
 }) => {
   const meshRef = useRef<Mesh>(null);
 
-  console.log(isGrow);
-  console.log(position);
-
-  const props = useSpring({
+  const props = useSpring<{ scale: [number, number, number] }>({
     scale: isGrow ? [1.5, 1.5, 1.5] : [0.5, 0.5, 0.5],
     position,
     config: config.stiff,
