@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
+    "@react-spring/three": "^9.4.5",
     "@react-three/drei": "^9.13.0",
     "@react-three/fiber": "^8.0.23",
     "@testing-library/jest-dom": "^5.16.4",
