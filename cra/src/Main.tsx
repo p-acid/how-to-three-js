@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import Gltf from "./Gltf";
@@ -6,6 +6,7 @@ import Square from "./Square";
 import Sphere from "./Sphere";
 
 import ShadowBox from "./ShadowBox";
+import Particles from "./Particles";
 
 function CoinMesh() {
   return (
@@ -20,6 +21,8 @@ export default function Main() {
   const [scale, setScale] = useState(0);
   const [isGrow, setIsGrow] = useState(false);
   const [position, setPosition] = useState([0, 0, 0]);
+
+  const mouse = useRef([0, 0]);
 
   return (
     <>
@@ -79,8 +82,12 @@ export default function Main() {
             args={["blue", 1, 100]}
             position={[-1, 1, 1]}
           />
-          {/* <gridHelper position={[0, -0.5, 0]} /> */}
+          <gridHelper position={[0, -0.5, 0]} />
           <ShadowBox />
+        </Canvas>
+        <Canvas style={{ height: "50rem" }}>
+          <Particles count={10000} mouse={mouse} />
+          <color attach="background" args={["#b6dbd9"]} />
         </Canvas>
       </Suspense>
     </>
