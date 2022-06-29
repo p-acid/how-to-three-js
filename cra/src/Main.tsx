@@ -5,6 +5,8 @@ import Gltf from "./Gltf";
 import Square from "./Square";
 import Sphere from "./Sphere";
 
+import Universe from "./Universe";
+
 function CoinMesh() {
   return (
     <mesh scale={3}>
@@ -46,12 +48,40 @@ export default function Main() {
           <gridHelper />
         </Canvas>
         <div style={{ display: "flex", gap: "8px" }}>
-          <button
-            onClick={() => setIsGrow((prev) => !prev)}
-          >{`${isGrow}`}</button>
+          <button onClick={() => setIsGrow((prev) => !prev)}>
+            {isGrow ? "Scale Down" : "Scale Up"}
+          </button>
           <button onClick={() => setPosition([5, 0, 0])}>to right</button>
           <button onClick={() => setPosition([-5, 0, 0])}>to left</button>
         </div>
+        <Canvas
+          camera={{ position: [-3, 2, 10], fov: 90 }}
+          style={{ height: "50rem" }}
+          shadows
+        >
+          <fog attach="fog" args={["#cecece", 0, 100]} />
+          <ambientLight intensity={0.1} />
+          <directionalLight
+            intensity={0.5}
+            castShadow
+            shadow-mapSize-height={512}
+            shadow-mapSize-width={512}
+          />
+          <pointLight
+            castShadow
+            intensity={20}
+            args={["green", 1, 100]}
+            position={[1, 1, 1]}
+          />
+          <spotLight
+            castShadow
+            intensity={20}
+            args={["blue", 1, 100]}
+            position={[-1, 1, 1]}
+          />
+          {/* <gridHelper position={[0, -0.5, 0]} /> */}
+          <Universe />
+        </Canvas>
       </Suspense>
     </>
   );
