@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { Mesh } from "three";
 
-const Universe = () => {
+const ShadowBox = () => {
   const boxRef = useRef<Mesh>(null);
 
   useFrame(() => {
@@ -29,4 +29,4 @@ const Universe = () => {
   );
 };
 
-export default Universe;
+export default ShadowBox;

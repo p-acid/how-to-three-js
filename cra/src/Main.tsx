@@ -5,7 +5,7 @@ import Gltf from "./Gltf";
 import Square from "./Square";
 import Sphere from "./Sphere";
 
-import Universe from "./Universe";
+import ShadowBox from "./ShadowBox";
 
 function CoinMesh() {
   return (
@@ -80,7 +80,7 @@ export default function Main() {
             position={[-1, 1, 1]}
           />
           {/* <gridHelper position={[0, -0.5, 0]} /> */}
-          <Universe />
+          <ShadowBox />
         </Canvas>
       </Suspense>
     </>
